@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c3e4ea8d.css",
+    "main.js": "/static/js/main.81b44af5.js",
+    "static/media/schedule.jpg": "/static/media/schedule.f4c7b472bc631bd66388.jpg",
+    "static/media/studentmgmt.jpg": "/static/media/studentmgmt.8753e47d1364bc946950.jpg",
+    "static/media/facultymgmt.jpg": "/static/media/facultymgmt.2eaa64bbed2049ccdd57.jpg",
+    "static/media/manualattendance.jpg": "/static/media/manualattendance.1c3edb3bd28be9ad2c57.jpg",
+    "static/media/classmgmt.jpg": "/static/media/classmgmt.5b64655e8206b041d31f.jpg",
+    "static/media/viewattendance.jpg": "/static/media/viewattendance.5fa2c13aead8463ebeaf.jpg",
+    "static/media/Vpolyserver.png": "/static/media/Vpolyserver.14d4f471a3ac755321b6.png",
+    "index.html": "/index.html",
+    "main.c3e4ea8d.css.map": "/static/css/main.c3e4ea8d.css.map",
+    "main.81b44af5.js.map": "/static/js/main.81b44af5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3e4ea8d.css",
+    "static/js/main.81b44af5.js"
+  ]
+}
