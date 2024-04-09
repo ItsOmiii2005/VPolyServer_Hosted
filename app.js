@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
-const cors = require('cors');
 const path = require('path');
 
 const connectToMongoDB = require('./mongoConnection');
@@ -19,7 +18,6 @@ const attendanceRoutes = require('./routes/attendanceRoutes');
 const authRoutes = require('./routes/authRoutes'); // Adjust the path based on your project structure
 
 const StudentAttendance = require('./models/studentAttendance');
-const Student = require('./models/Student');
 const Class = require('./models/Class');
 
 const app = express();
@@ -31,7 +29,6 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware to parse JSON, URL-encoded data and cookies
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(bodyParser.json());
