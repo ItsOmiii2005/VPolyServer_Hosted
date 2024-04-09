@@ -94,7 +94,7 @@ loggedin:
         path: '/', // Specify the path where the cookie was originally set
     }));
 
-   res.json({ logout: false })
+    res.json({ logout: false }).status(200);
 },
 
 }

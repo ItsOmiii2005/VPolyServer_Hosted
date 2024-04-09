@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.c3e4ea8d.css",
-    "main.js": "/static/js/main.0d5213f2.js",
-    "static/media/schedule.jpg": "/static/media/schedule.f4c7b472bc631bd66388.jpg",
-    "static/media/studentmgmt.jpg": "/static/media/studentmgmt.8753e47d1364bc946950.jpg",
-    "static/media/facultymgmt.jpg": "/static/media/facultymgmt.2eaa64bbed2049ccdd57.jpg",
-    "static/media/manualattendance.jpg": "/static/media/manualattendance.1c3edb3bd28be9ad2c57.jpg",
-    "static/media/classmgmt.jpg": "/static/media/classmgmt.5b64655e8206b041d31f.jpg",
-    "static/media/viewattendance.jpg": "/static/media/viewattendance.5fa2c13aead8463ebeaf.jpg",
-    "static/media/Vpolyserver.png": "/static/media/Vpolyserver.14d4f471a3ac755321b6.png",
+    "main.css": "/static/css/main.f1529c5b.css",
+    "main.js": "/static/js/main.85c596c1.js",
+    "static/media/schedule.webp": "/static/media/schedule.31dd3e3e0a9e11451216.webp",
+    "static/media/classmgmt.webp": "/static/media/classmgmt.927c1e2c12c3f95c4e11.webp",
+    "static/media/studentmgmt.webp": "/static/media/studentmgmt.615bc65d0accc374a577.webp",
+    "static/media/manualattendance.webp": "/static/media/manualattendance.546cdbbc0c16c19669e9.webp",
+    "static/media/facultymgmt.webp": "/static/media/facultymgmt.5949a24cee09c8f89cec.webp",
+    "static/media/viewattendance.webp": "/static/media/viewattendance.687fff44659ff63bf10d.webp",
+    "static/media/Vpolyserver.webp": "/static/media/Vpolyserver.002605c11778cbe1f315.webp",
     "index.html": "/index.html",
-    "main.c3e4ea8d.css.map": "/static/css/main.c3e4ea8d.css.map",
-    "main.0d5213f2.js.map": "/static/js/main.0d5213f2.js.map"
+    "main.f1529c5b.css.map": "/static/css/main.f1529c5b.css.map",
+    "main.85c596c1.js.map": "/static/js/main.85c596c1.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3e4ea8d.css",
-    "static/js/main.0d5213f2.js"
+    "static/css/main.f1529c5b.css",
+    "static/js/main.85c596c1.js"
   ]
 }
