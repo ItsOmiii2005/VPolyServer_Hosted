@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f1529c5b.css",
-    "main.js": "/static/js/main.85c596c1.js",
+    "main.css": "/static/css/main.77ea43f1.css",
+    "main.js": "/static/js/main.bb15692b.js",
     "static/media/schedule.webp": "/static/media/schedule.31dd3e3e0a9e11451216.webp",
     "static/media/classmgmt.webp": "/static/media/classmgmt.927c1e2c12c3f95c4e11.webp",
     "static/media/studentmgmt.webp": "/static/media/studentmgmt.615bc65d0accc374a577.webp",
@@ -10,11 +10,11 @@
     "static/media/viewattendance.webp": "/static/media/viewattendance.687fff44659ff63bf10d.webp",
     "static/media/Vpolyserver.webp": "/static/media/Vpolyserver.002605c11778cbe1f315.webp",
     "index.html": "/index.html",
-    "main.f1529c5b.css.map": "/static/css/main.f1529c5b.css.map",
-    "main.85c596c1.js.map": "/static/js/main.85c596c1.js.map"
+    "main.77ea43f1.css.map": "/static/css/main.77ea43f1.css.map",
+    "main.bb15692b.js.map": "/static/js/main.bb15692b.js.map"
   },
   "entrypoints": [
-    "static/css/main.f1529c5b.css",
-    "static/js/main.85c596c1.js"
+    "static/css/main.77ea43f1.css",
+    "static/js/main.bb15692b.js"
   ]
 }

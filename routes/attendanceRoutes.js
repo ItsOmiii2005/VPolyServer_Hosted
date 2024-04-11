@@ -9,6 +9,10 @@ const attendanceControllers =require("../controllers/attendanceControllers");
 router.get('/:studentEnrollmentNo', attendanceControllers.getAttendanceByStudentEnroll);
 
 router.get('/', attendanceControllers.getAllAttendance);
+router.post('/deleteDate', attendanceControllers.delete);
+
+router.post('/viewattendance', attendanceControllers.viewAttendance);
+router.post('/sendemail', attendanceControllers.sendemail);
 
  router.post('/manualattendance', attendanceControllers.getAllStudentForMalualAttendance);
 

@@ -78,7 +78,6 @@ loggedin:
       // Serve the dashboard content here
       const userData = {
           name: req.user.username, // Replace with the actual user's name
-          email: 'omanandswami@2005.com',
           role: req.user.role // Replace with the actual user's email
       };
   

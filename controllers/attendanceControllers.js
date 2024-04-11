@@ -1,11 +1,116 @@
 const Class = require('../models/Class');
 const StudentAttendance = require('../models/studentAttendance');
 const Student = require('../models/Student');
+const nodemailer = require('nodemailer');
+
 
 
 
 const attendanceControllers = {
+sendemail: async  (req, res) => {
+  // console.log(req.body)
+  // Get the Blob data from the FormData
+  const attachmentBlob = req.files.file; // Assuming the file is sent with the key 'file'
+  console.log(attachmentBlob)
+  // Create a Nodemailer transporter
+  var transporter = nodemailer.createTransport({
+    host: "live.smtp.mailtrap.io",
+    port: 587,
+    auth: {
+      user: "api",
+      pass: "61f171185bd4ab1c4d65d4441ecf35d1"
+    }
+  });
 
+  // Mail options
+  const mailOptions = {
+      from: 'VPolyServer@demomailtrap.com',
+      to: 'omanandswami2005@gmail.com',
+      subject: 'Attendance Report By VPolyServer',
+      text: `Please find the attached attendance report below.|| Name :${attachmentBlob.name}  ||  Thank you !`,
+      attachments: [
+        {
+            filename: attachmentBlob.name,
+            content: attachmentBlob.data // Assuming the Blob data is stored in 'data' property
+        }
+    ]
+  };
+
+  // Send the email
+  transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      console.error('Error sending email:', error);
+      // Send error response
+      return res.status(500).json({ message: 'Error sending email' });
+    } else {
+      console.log('Email sent:', info.response);
+      // Send success response
+      return res.status(200).json({ message: 'Email sent successfully' });
+    }
+  });
+
+
+},
+
+  viewAttendance: async (req, res) => {
+    try {
+      const { selectedClass, dateRange, timeSlot } = req.body;
+      // console.log(selectedClass, timeRange, timeSlot);
+    // Convert startDate and endDate to ISO string format
+    const startDate = new Date(dateRange.startDate);
+    startDate.setUTCHours(0, 0, 0, 0);
+    
+    const endDate = new Date(dateRange.endDate);
+    endDate.setUTCHours(0,0,0,0);
+    
+    
+       // Find the class ID based on the class name
+       const classInfo = await Class.findById({_id:selectedClass}).populate('students');
+    
+       if (!classInfo) {
+         return res.status(404).json({ error: 'Class not found' });
+       }
+      // console.log(classInfo);
+    
+    
+      const students = classInfo.students;
+     // Fetch attendance data for each student based on the provided parameters
+    //  console.log(dateRange);
+    console.log(timeSlot);
+     const attendanceData = [];
+    
+     
+     for (const student of students) {
+    
+      let query = {
+        studentId: student._id,
+        date: { $gte: startDate, $lte: endDate }
+      };
+    
+      // If timeSlot is not "All Time Slot", include it in the query
+      if (timeSlot !== "All Time Slots") {
+        query.timeSlot = timeSlot;
+      }
+    
+      const studentAttendance = await StudentAttendance.find(query).select('date present'); // Select only required fields
+    
+          attendanceData.push({
+            studentName: student.name,
+            attendance: studentAttendance,
+            rollNo : student.rollNo,
+          });
+     }
+    // console.log(attendanceData);
+     res.json({ attendanceData });
+    
+    
+    
+    }   catch (error) {
+    
+      console.log(error);
+    }
+  }
+,
   getAttendanceByStudentEnroll:
     async (req, res) => {
       const studentEnrollmentNo = req.params.studentEnrollmentNo;
@@ -137,7 +242,7 @@ const attendanceControllers = {
         (attendance) => attendance.studentId?.class?.name === className
       );
   
-      console.log(filteredStudentAttendance);
+      // console.log(filteredStudentAttendance);
       console.log(currentDate)
       const finalAttendance = filteredStudentAttendance.map((attendance) => ({
         _id: attendance.studentId._id,
@@ -243,7 +348,51 @@ const attendanceControllers = {
     }
   },
 
+  delete: async (req, res) => {
+    const { date, classs, timeSlot } = req.body;
+    console.log("brbr"+date, classs, timeSlot);
+    try {
+const mainDate = date.split('/').reverse().join('-');
+      
 
+const dt = new Date(mainDate);
+dt.setUTCHours(0,0,0,0);
+console.log(dt);
+
+const classFilter = { name: classs };
+const classData = await Class.findOne(classFilter, { students: 1 }).lean();
+
+if (!classData) {
+  console.log('Class not found');
+  return; // Or handle the error appropriately
+}
+const studentIds = classData.students;
+// console.log(studentIds);
+
+
+let filter = { date: dt };
+
+// Add timeSlot to filter if it's not "All Time Slots"
+if (timeSlot !== "All Time Slots") {
+  filter.timeSlot = timeSlot;
+}
+console.log(filter);
+// Find student attendance records that match the filter
+// const students = await StudentAttendance.find({ studentId: { $in: studentIds }, ...filter });
+// console.log(students);
+
+// Delete the matching attendance records
+const deleteResult = await StudentAttendance.deleteMany({ studentId: { $in: studentIds }, ...filter });
+console.log(`${deleteResult.deletedCount} attendance records deleted.`);
+
+  // console.log(students+" ::: Deleted");
+      res.json({ message: 'Attendance deleted successfully' }).status(200);
+    } catch (error) {
+      console.error('Error deleting attendance:', error);
+      res.status(500).json({ message: 'Internal Server Error' });
+    }
+  }
+  
   
 
 }
