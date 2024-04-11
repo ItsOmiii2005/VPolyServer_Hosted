@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 require('dotenv').config();
-const cors = require('cors');
 const path = require('path');
 
 const connectToMongoDB = require('./mongoConnection');
@@ -30,7 +29,6 @@ const PORT = process.env.PORT || 5000;
 // Middleware to parse JSON, URL-encoded data,files and cookies
 app.use(fileUpload());
 app.use(express.json());
-app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
