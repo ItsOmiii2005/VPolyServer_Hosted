@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/static/css/main.77ea43f1.css",
-    "main.js": "/static/js/main.bb15692b.js",
+    "main.js": "/static/js/main.acd6f22f.js",
     "static/media/schedule.webp": "/static/media/schedule.31dd3e3e0a9e11451216.webp",
     "static/media/classmgmt.webp": "/static/media/classmgmt.927c1e2c12c3f95c4e11.webp",
     "static/media/studentmgmt.webp": "/static/media/studentmgmt.615bc65d0accc374a577.webp",
     "static/media/manualattendance.webp": "/static/media/manualattendance.546cdbbc0c16c19669e9.webp",
     "static/media/facultymgmt.webp": "/static/media/facultymgmt.5949a24cee09c8f89cec.webp",
-    "static/media/viewattendance.webp": "/static/media/viewattendance.687fff44659ff63bf10d.webp",
+    "static/media/viewattendance.jpg": "/static/media/viewattendance.7965cf21879c015091d6.jpg",
     "static/media/Vpolyserver.webp": "/static/media/Vpolyserver.002605c11778cbe1f315.webp",
     "index.html": "/index.html",
     "main.77ea43f1.css.map": "/static/css/main.77ea43f1.css.map",
-    "main.bb15692b.js.map": "/static/js/main.bb15692b.js.map"
+    "main.acd6f22f.js.map": "/static/js/main.acd6f22f.js.map"
   },
   "entrypoints": [
     "static/css/main.77ea43f1.css",
-    "static/js/main.bb15692b.js"
+    "static/js/main.acd6f22f.js"
   ]
 }
